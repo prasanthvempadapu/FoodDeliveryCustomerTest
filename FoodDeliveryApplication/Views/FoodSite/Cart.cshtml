@@ -1,0 +1,89 @@
+﻿@using System.Data.SqlClient
+@model List<Cart>
+
+<link rel="stylesheet" href="~/scss/RestaurantStyle.css">
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@{
+    int Total_Price = 0;
+    int Id = 0;
+
+    
+    int Total_Price1 = 0;
+    int Id1 = 0;
+}
+
+
+
+@if(ViewBag.Cart=="Empty"){
+    <div align="center" style="align-content:center;align-items:center;justify-content:center;margin-top:30px;">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.kQbZlYiaWUw5IXu3fVdJkAHaHa?w=194&h=194&c=7&r=0&o=5&dpr=1.5&pid=1.7" style="width:150px;height:150px;"/>
+        <h4 style="color:#535665;font-size: 20px;font-weight: 600;">Your Cart is Empty</h4>
+        <p style="color:#7e808c">You can go to home page to view more restaurants</p>
+        <a asp-controller="FoodSite" asp-action="Restaurants" class="btn btn-primary" style="background-color:orange;color:white;font-weight:bold;border-color:orange">SEE RESTAURANTS</a>
+
+    </div>
+}
+else
+{
+
+@*@using(@Html.BeginForm("DeleteItemFromCart","FoodSite",FormMethod.Post))
+@*<form method="post">*@
+//{
+<h3 style="font-family:'Roboto Black', sans-serif;color:#535665;font-weight:bold;margin-top:10px">CART</h3>
+    
+
+
+
+
+
+
+
+
+
+  <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <div class="row">
+                @foreach(var obj1 in Model)
+                {
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    @*<a href="">*@
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                     <div class="image-box">
+                                        <img src="@obj1.FoodImage" alt="" />
+                                        </div>
+                                        <div class="text-container">
+                                            <h6>@obj1.FoodItem</h6>
+                                            <p>Price : @obj1.Price</p>
+                                            <p>Quantity : @obj1.Quantity</p>
+                                            <a class="btn btn-primary" asp-controller="FoodSite" asp-action="DeleteItemFromCart" asp-route-Id="@obj1.ItemNo" style="background-color:orange;border-color:orange">Remove</a>
+                                            
+                                            @{
+                                                Total_Price1 = Total_Price1 + obj1.Price * obj1.Quantity;
+                                                Id1 = obj1.RestaurantId;
+                                            }
+                                        </div>
+                                   
+                            </div>
+                        </div>
+                   @* </a>*@
+                </div>
+                 }
+            </div>
+        </div>
+    </div>   
+
+<h4>Total Price : @Total_Price1</h4>
+<br/>
+
+<a class="btn btn-primary" asp-controller="FoodSite" asp-action="CustomerDetails" type="submit" style="background-color:orange;border-color:orange" >Add Details</a>
+<a class="btn btn-primary" asp-controller="FoodSite" asp-action="Restaurants" style="background-color:orange;border-color:orange">Add Items</a> 
+}

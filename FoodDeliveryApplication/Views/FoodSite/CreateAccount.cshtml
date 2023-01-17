@@ -1,0 +1,58 @@
+﻿@model SignUp
+
+
+
+
+<link rel="stylesheet" href="~/scss/Login.css"/>
+
+<div class="container">
+    <div class="box1">
+        <img src="https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/2278957/1360/906/m1/fpnw/wm1/mqptscuzpkmfcfsoio60xllxmrnv8jh0zzetax9mp8qfs5fqwke5guda9gqmjetf-.jpg?1487097976&s=949f4b52d70d09daca06e96dfe29eece"/>
+    </div>
+    <div class="box2">
+               <form method="post">
+                <div class="w3-border w3-border-orange p-3 mt-4 container  align-self-center" style="width:450px;background-color:white;border:orange">
+
+                    <div style="vertical-align:middle" class="align-items-center">
+                        @if(ViewBag.UserName == "UserName already Exist")
+                        {
+                            <p class="text-danger">UserName already exist</p>
+                        }
+                        @if(ViewBag.Email == "Email already Exist")
+                        {
+                            <p class="text-danger">Email already exist</p>
+                        }
+                         <div style="display: flex; justify-content: flex-start; flex-direction:row; align-items: center">
+                                <h3 style="margin-right:250px">Sign up</h3>
+                                 <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r" style="left:50px ; height:60px;width:60px"/>
+                             </div>
+                        @*<br />*@
+                        <div class="mb-3">
+                            @*<label asp-for="UserName"></label>*@
+                            <input required asp-for="UserName" placeholder="User Name" class="form-control" style="width:100%"/>
+                        </div>
+
+                         <div class="mb-3">
+                            @*<label asp-for="Email"></label>*@
+                            <input required asp-for="Email" placeholder="Email" class="form-control" style="width:100%"/>
+                        </div>
+
+                         <div class="mb-3">
+                            @*<label asp-for="Password"></label>*@
+                            <input required asp-for="Password" placeholder="Password" class="form-control" type="password" style="width:100%"/>
+                        </div>
+
+                        <button type="submit" class="btn" style="width:100%;background-color:crimson;color:white ">Create</button>
+
+                        <p>Already have an account ?<a asp-controller="FoodSite" asp-action="Login" style="color:crimson"> Login</a></p>
+
+                    </div>
+
+      
+        
+                </div>
+
+            </form>
+    </div>
+</div>
+

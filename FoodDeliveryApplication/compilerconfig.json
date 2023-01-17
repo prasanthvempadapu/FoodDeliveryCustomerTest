@@ -1,0 +1,34 @@
+﻿[
+  {
+    "outputFile": "wwwroot/scss/index.css",
+    "inputFile": "wwwroot/scss/index.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/RestaurantStyle.css",
+    "inputFile": "wwwroot/scss/RestaurantStyle.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/MenuStyle.css",
+    "inputFile": "wwwroot/scss/MenuStyle.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/HomePage.css",
+    "inputFile": "wwwroot/scss/HomePage.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/Dummy.css",
+    "inputFile": "wwwroot/scss/Dummy.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/Login.css",
+    "inputFile": "wwwroot/scss/Login.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/OrderStatus.css",
+    "inputFile": "wwwroot/scss/OrderStatus.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/Payment.css",
+    "inputFile": "wwwroot/scss/Payment.scss"
+  }
+]
